@@ -23,18 +23,19 @@ public class TournamentStats {
         int inputInt = scanner.nextInt();
         System.out.println("Sortować rosnąco czy malejąco? (1 - rosnąco, 2 - malejąco)");
         int inputSort = scanner.nextInt();
+
         switch (Integer.parseInt(inputInt + "" + inputSort)) {
-            case 11 -> Collections.sort(players, Comparator.comparing(Player::getFirstName));
+            case 11 -> Collections.sort(players, Player.compareByPersonName);
             case 12 -> {
-                Comparator.comparing(Player::getFirstName).reversed();
+                Collections.sort(players, Player.compareByPersonName.reversed());
             }
-            case 21 -> Collections.sort(players, Comparator.comparing(Player::getLastName));
+            case 21 -> Collections.sort(players, Player.compareByPersonLastName);
             case 22 -> {
-                Comparator.comparing(Player::getLastName).reversed();
+                Collections.sort(players, Player.compareByPersonLastName.reversed());
             }
-            case 31 -> Collections.sort(players, Comparator.comparingInt(Player::getResult));
+            case 31 -> Collections.sort(players, Player.compareByResult);
             case 32 -> {
-                Comparator.comparing(Player::getResult).reversed();
+                Collections.sort(players, Player.compareByResult.reversed());
             }
             default -> System.out.println("Zły wybór parametru");
         }
