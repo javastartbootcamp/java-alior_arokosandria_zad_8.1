@@ -26,21 +26,26 @@ public class TournamentStats {
             switch (inputInt) {
                 case 1:
                     Collections.sort(players, Comparator.comparing(Player::getFirstName));
+                    if (inputSort==2){
+                        Collections.reverse(players);
+                    }
                     break;
                 case 2:
                     Collections.sort(players, Comparator.comparing(Player::getLastName));
+                    if (inputSort==2){
+                        Collections.reverse(players);
+                    }
                     break;
                 case 3:
                     Collections.sort(players, Comparator.comparingInt(Player::getResult));
+                    if (inputSort==2){
+                        Collections.reverse(players);
+                    }
                     break;
                 default:
                     System.out.println("Zły wybór parametru");
 
             }
-        } else if (inputSort == 2) {
-            Collections.reverse(players);
-        }else {
-            System.out.println("Zły wybór sortowania");
         }
         Files.writeFile(players);
     }
