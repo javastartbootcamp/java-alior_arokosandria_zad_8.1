@@ -1,4 +1,5 @@
 package pl.javastart.task;
+
 import java.io.IOException;
 import java.util.*;
 
@@ -22,32 +23,26 @@ public class TournamentStats {
         int inputInt = scanner.nextInt();
         System.out.println("Sortować rosnąco czy malejąco? (1 - rosnąco, 2 - malejąco)");
         int inputSort = scanner.nextInt();
-        if (inputSort == 1) {
-            switch (inputInt) {
-                case 1:
-                    Collections.sort(players, Comparator.comparing(Player::getFirstName));
-                    if (inputSort==2){
-                        Collections.reverse(players);
-                    }
-                    break;
-                case 2:
-                    Collections.sort(players, Comparator.comparing(Player::getLastName));
-                    if (inputSort==2){
-                        Collections.reverse(players);
-                    }
-                    break;
-                case 3:
-                    Collections.sort(players, Comparator.comparingInt(Player::getResult));
-                    if (inputSort==2){
-                        Collections.reverse(players);
-                    }
-                    break;
-                default:
-                    System.out.println("Zły wybór parametru");
-
+        switch (inputInt + inputSort) {
+            case 11 -> Collections.sort(players, Comparator.comparing(Player::getFirstName));
+            case 12 -> {
+                Collections.sort(players, Comparator.comparing(Player::getFirstName));
+                Collections.reverse(players);
             }
+            case 21 -> Collections.sort(players, Comparator.comparing(Player::getLastName));
+            case 22 -> {
+                Collections.sort(players, Comparator.comparing(Player::getLastName));
+                Collections.reverse(players);
+            }
+            case 31 -> Collections.sort(players, Comparator.comparingInt(Player::getResult));
+            case 32 -> {
+                Collections.sort(players, Comparator.comparingInt(Player::getResult));
+                Collections.reverse(players);
+            } default -> System.out.println("Zły wybór parametru");
         }
+
         Files.writeFile(players);
     }
 }
+
 
