@@ -26,15 +26,15 @@ public class TournamentStats {
         switch (Integer.parseInt(inputInt + "" + inputSort)) {
             case 11 -> Collections.sort(players, Comparator.comparing(Player::getFirstName));
             case 12 -> {
-                Collections.reverse(Collections.singletonList(Comparator.comparing(Player::getFirstName)));
+                Comparator.comparing(Player::getFirstName).reversed();
             }
             case 21 -> Collections.sort(players, Comparator.comparing(Player::getLastName));
             case 22 -> {
-                Collections.reverse(Collections.singletonList(Comparator.comparing(Player::getLastName)));
+                Comparator.comparing(Player::getLastName).reversed();
             }
             case 31 -> Collections.sort(players, Comparator.comparingInt(Player::getResult));
             case 32 -> {
-                Collections.reverse(Collections.singletonList(Comparator.comparing(Player::getResult)));
+                Comparator.comparing(Player::getResult).reversed();
             }
             default -> System.out.println("Zły wybór parametru");
         }
