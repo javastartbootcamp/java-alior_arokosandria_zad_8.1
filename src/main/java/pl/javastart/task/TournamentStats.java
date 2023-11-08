@@ -23,7 +23,7 @@ public class TournamentStats {
         int inputInt = scanner.nextInt();
         System.out.println("Sortować rosnąco czy malejąco? (1 - rosnąco, 2 - malejąco)");
         int inputSort = scanner.nextInt();
-        switch (Integer.parseInt(inputInt+""+inputSort)) {
+        switch (Integer.parseInt(inputInt + "" + inputSort)) {
             case 11 -> Collections.sort(players, Comparator.comparing(Player::getFirstName));
             case 12 -> {
                 Collections.sort(players, Comparator.comparing(Player::getFirstName));

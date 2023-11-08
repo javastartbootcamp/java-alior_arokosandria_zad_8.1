@@ -7,9 +7,10 @@ import java.util.List;
 public class Files {
 
     public static void writeFile(List<Player> players) throws IOException {
-        try(FileWriter fileWriter=new FileWriter("stats.csv")){
+        try (FileWriter fileWriter = new FileWriter("stats.csv")) {
             for (Player player : players) {
-                fileWriter.write(player.getFirstName() + " " + player.getLastName() + ";" + player.getResult()+"\n");
+                fileWriter.write(player.getFirstName() + " " + player.getLastName() + ";" + player.getResult() + "\n");
             }
         }
-}}
+    }
+}
