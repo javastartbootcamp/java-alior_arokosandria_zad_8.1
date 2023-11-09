@@ -1,11 +1,12 @@
 package pl.javastart.task;
+
 import java.io.IOException;
 import java.util.*;
 
 public class TournamentStats {
-    private final static int SORT_BY_FIRST_NAME = 1;
-    private final static int SORT_BY_LAST_NAME = 2;
-    private final static int SORT_BY_RESULT = 3;
+    private static final int SORT_BY_FIRST_NAME = 1;
+    private static final int SORT_BY_LAST_NAME = 2;
+    private static final int SORT_BY_RESULT = 3;
 
     void run(Scanner scanner) throws IOException {
         List<Player> players = new ArrayList<>();
