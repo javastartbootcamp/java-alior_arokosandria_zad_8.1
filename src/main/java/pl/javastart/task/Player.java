@@ -37,28 +37,4 @@ public class Player {
         this.result = result;
     }
 
-    static Comparator<Player> compareByPersonName = new Comparator<Player>() {
-        @Override
-        public int compare(Player p1, Player p2) {
-            return p1.getFirstName().compareTo(p2.getFirstName());
-        }
-    };
-
-    static Comparator<Player> compareByPersonLastName = new Comparator<Player>() {
-        @Override
-        public int compare(Player p1, Player p2) {
-            return p1.getLastName().compareTo(p2.getLastName());
-        }
-    };
-    static Comparator<Player> compareByResult = new Comparator<Player>() {
-        @Override
-        public int compare(Player p1, Player p2) {
-            if (p1.getResult() > p2.getResult()) {
-                return 1;
-            } else if (p1.getResult() < p2.getResult()) {
-                return -1;
-            }
-            return 0;
-        }
-    };
 }
